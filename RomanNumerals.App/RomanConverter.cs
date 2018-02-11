@@ -19,7 +19,8 @@ namespace RomanNumerals.App.Roman
                 {9, "IX"},
                 {10, "X" },
                 {40, "XL" },
-                {50, "100" },
+                {50, "L" },
+                {90, "XC" },
                 {100, "C" },
                 {400, "CD" },
                 {500, "D" },
@@ -30,20 +31,6 @@ namespace RomanNumerals.App.Roman
             var descendedDictonary = numberTable.OrderByDescending(x => x.Key);
 
             var results = "";
-
-            //while (number > 0)
-            //{
-            //    foreach (var num in descendedDictonary)
-            //    {
-            //        if (number >= num.Value)
-            //        {
-            //            results += num.Key;
-            //            number -= num.Value;
-            //            continue;
-            //        }
-
-            //    }
-            //}
 
             foreach(var num in descendedDictonary)
             {
