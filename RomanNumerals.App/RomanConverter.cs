@@ -31,18 +31,23 @@ namespace RomanNumerals.App.Roman
             var descendedDictonary = numberTable.OrderByDescending(x => x.Key);
 
             var results = "";
-
-            foreach(var num in descendedDictonary)
+           
+            if (number != 0)
             {
-                while (number >= num.Key)
+                foreach (var num in descendedDictonary)
                 {
-                    results += num.Value;
-                    number -= num.Key;
-                }
+                    while (number >= num.Key)
+                    {
+                        results += num.Value;
+                        number -= num.Key;
+                    }
+                } 
+            }
+            else
+            {
+                throw new Exception("Number cannot be zero.");
             }
 
-            //Console.WriteLine(results);
-            //Console.ReadKey();
             return results;
         }
     }

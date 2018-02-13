@@ -319,19 +319,16 @@ namespace RomanNumberalsTests.cs
             Assert.AreEqual(expected, results);
         }
 
-        //test for not a nummber
-        [Test]
-        public void When_user_inputs_something_that_is_not_a_number()
-        {
-            var number = "dog";
-            var converter = new RomanConverter();
+        //test for not a number
+        //[Test]
+        //public void When_user_inputs_something_that_is_not_a_number()
+        //{
+        //    var number = "dog";
+        //    var converter = new RomanConverter();
+        //    var error = new System.Exception("Must input a number.");
 
-            var results = converter.ConvertToRomanNumeral(number);
-
-            var expected = "IX";
-
-            Assert.AreEqual(expected, results);
-        }
+        //    Assert.Throws(typeof(System.Exception), () => converter.ConvertToRomanNumeral(number));
+        //}
 
         //test for input that 0
         [Test]
@@ -340,20 +337,8 @@ namespace RomanNumberalsTests.cs
             var number = "0";
             var converter = new RomanConverter();
             var error = new System.Exception("Number cannot be zero.");
-            var results = converter.ConvertToRomanNumeral(number);
 
-            if (number != "0")
-            {
-                converter.ConvertToRomanNumeral(number);
-            }
-            else
-            {
-                throw error;
-            }
-            
-            var expected = error;
-
-            Assert.AreEqual(expected, results);
+            Assert.Throws(typeof(System.Exception), ()=>converter.ConvertToRomanNumeral(number));
         }
     }
 }
